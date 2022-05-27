@@ -1,42 +1,34 @@
 # Challenge-06
-This is a blockchain-based ledger system with a user-friendly web interface. It allows partner banks to transfer money between senders and receivers, and to verify the integrity of the data in the ledger.
+This is a Jupyter notebook that provides a set of data analysis and visualization tools to check the San Francisco real estate market for investment opportunities. Specifically, it will give users an easy but effective way of viewing investment opportunities to then rent out.
 
 ---
 ## Technologies
 PyChain Ledger uses the following Python 3.7 libraries:
-### **streamlit** - for building the user-friendly web interface.
-### **dataclasses** - for use of the *dataclass* tool in building custom classes.
-### **typing** - for use of the *Any* and *List* tools in defining attributes' datatypes and building lists (the chain).
-### **datetime** - for the *datetime* tool in defining the timestamp of the blocks.
 ### **pandas** - for financial analysis.
-### **hashlib** - for creating hashes for each block.
+### **hvplot** - for visualizations of financial analyses, which is part of the **PyViz** Python visualization package and also contains **geoviews**.
+### **pathlib** - for the *Path* tool in uploading data onto Jupyter Lab
 ```python
-import streamlit as st
-from dataclasses import dataclass
-from typing import Any, List
-import datetime as datetime
 import pandas as pd
-import hashlib
+import hvplot.pandas
+from pathlib import Path
 ```
 ---
 ## Installation Guide
-First, install the following on the **dev** environment, or whichever environment you would like to install **streamlit** on. Activate the environment in GitBash or Terminal, and run the following:
+First, install the following on the **dev** environment, or whichever environment you would like to install **PyViz** on. Activate the environment in GitBash or Terminal, and run the following:
 ```
 conda install -c pyviz hvplot geoviews
 ```
-Then, navigate to the folder that contains this PyChain.py file in GitBash or Terminal for Mac. Run the following:
+Then, navigate to the folder that contains this san_francisco_housing.ipynb file in GitBash or Terminal for Mac. Run the following:
 ```
-streamlit run pychain.py
+jupyter lab san_francisco_housing.ipynb
 ```
 It will open the user interface in a new window on your browser.
 
 ---
 ## Usage
-You can add as many blocks as you need by filling in the sender (name or id; it is a string), receiver (name or id), and amount (float) and clicking "Add Block".
-You will see **The PyChain Ledger** on the bottom grow as you add more blocks, with the **Block Inspector** to the left giving you a dropdown bar where you can examine each block in greater detail.
-![usage](usage.png)
-You can verify the integrity of the blockchain by clicking "Validate Chain" under **The PyChain Ledger**. If correct, it will return "True" under the "Validate Chain" button. 
-![validate](validate.png)
+You can adjust the toggles on the map (see screenshot below) to view detailed rent and price data by neighborhood.
+![map](map.png)
+
 
 ---
 ## Contributors
